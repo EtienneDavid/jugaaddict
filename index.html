@@ -14,17 +14,7 @@
 <script src="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.css" />
 
-<script>
-var map = L.map('map-container').setView([-31.6, 47.5], 4);
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
-  maxZoom: 18,
-}).addTo(map);
 
-var bbox = [[-23.008804, -40.562330], [141.013641, 54.599914]];
-var bounds = L.latLngBounds(bbox);
-map.fitBounds(bounds);
-</script>
 </head>
 <body>
   <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light">
@@ -73,5 +63,15 @@ map.fitBounds(bounds);
     <p>Email: <a href="mailto:jug.asia.africa.d@gmail.com">jug.asia.africa.d@gmail.com</a></p>
   </section>
 </body>
+<script>
+var map = L.map('map-container').setView([-31.6, 47.5], 4);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
+  maxZoom: 18,
+}).addTo(map);
 
+var bbox = [[-23.008804, -40.562330], [141.013641, 54.599914]];
+var bounds = L.latLngBounds(bbox);
+map.fitBounds(bounds);
+</script>
 </html>
