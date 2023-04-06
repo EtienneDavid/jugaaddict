@@ -11,31 +11,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jugaaddict - Archives</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-        }
-      
+<script src="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.css" />
 
+<script>
+var map = L.map('map-container').setView([-31.6, 47.5], 4);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
+  maxZoom: 18,
+}).addTo(map);
 
-    section {
-        padding: 50px;
-    }
-
-    #map {
-        height: 400px;
-        margin: 0;
-        padding: 0;
-        width: 100%;
-    }
-
-    iframe {
-        border: none;
-    }
-</style>
+var bbox = [[-23.008804, -40.562330], [141.013641, 54.599914]];
+var bounds = L.latLngBounds(bbox);
+map.fitBounds(bounds);
+</script>
 </head>
 <body>
   <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light">
@@ -68,10 +57,10 @@
     <p>In 2016, we, Eloi, Thomas and Etienne, travelled for 1 year in Asia and Africa to meet frugal entrepreneurs in Agriculture.</p>
   </section>
 
-    <section id="map" class="container mt-5" >
-      <h2>Map</h2>
-
-    </section>
+<section id="map" class="container mt-5" >
+  <h2>Map</h2>
+  <div id="map-container"></div>
+</section>
 
   <section id="our-story" class="container mt-5">
     <h2>Our Story</h2>
